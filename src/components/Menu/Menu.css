@@ -1,0 +1,21 @@
+.menuContainer {
+  height: 13vh;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuContent {
+  height: 80%;
+  width: 78%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 19vw;
+}
