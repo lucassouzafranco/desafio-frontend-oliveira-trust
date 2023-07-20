@@ -51,10 +51,19 @@
   justify-content: center;
 }
 
+label {
+  border: 1px solid #d8d8d8;
+  width: 27%;
+  height: 71%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
 .nameField {
   border: 1px solid #d8d8d8;
   width: 27%;
-  height: 75%;
+  height: 71%;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -63,12 +72,27 @@
 .lastNameField, .emailField {
   border: 1px solid #d8d8d8;
   width: 27%;
-  height: 75%;
+  height: 71%;
   border-radius: 4px;
-  margin-left: 1em;
   display: flex;
   align-items: center;
+  margin-left: 1em;
 }
+
+.nameField input,
+.lastNameField input,
+.emailField input {
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  padding-left: 0.4em;
+  color: black;
+  font-weight: 700;
+}
+
 
 .searchButton {
   border: 1px solid #0c9bf2;
@@ -79,9 +103,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 
-.searchBarContent h5 {
+.searchButton img {
+  width: 1.1vw;
+  margin-right: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+h5 {
   color: gray;
   font-weight: 300;
   margin-left: 0.5em;
@@ -89,4 +120,5 @@
 
 .searchBarContent h4 {
   color: #0c9bf2;
+  font-weight: 600;
 }

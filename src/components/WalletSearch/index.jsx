@@ -1,5 +1,6 @@
 import React from 'react'
 import './WalletSearch.css';
+import search from '../../assets/search_icon.png'
 
 function WalletSearch() {
   return (
@@ -13,14 +14,28 @@ function WalletSearch() {
             <button>Adicionar Carteira</button>
           </div>
         </div>
+
         <div className='searchBar'>
-          <div className='searchBarContent'>
-            <div className='nameField'><h5>Nome</h5></div>
-            <div className='lastNameField'><h5>Sobrenome</h5></div>
-            <div className='emailField'><h5>Email</h5></div>
-            <div className='searchButton'><h4>Search</h4></div>
-          </div>
-        </div>
+        <form className='searchBarContent'>
+          <label className='nameField'>
+            <h5>Nome:</h5>
+            <input type="text" name="name" />
+          </label>
+          <label className='lastNameField'>
+            <h5>Sobrenome:</h5>
+            <input type="text" name="name" />
+          </label>
+          <label className='emailField'>
+            <h5>Email:</h5>
+            <input type="text" name="name" />
+          </label>
+          <button className='searchButton'>
+            <img src={search} alt="Search" />
+            <h4>Buscar</h4>
+          </button>
+        </form>  
+      </div>
+        
       </div>
     </div>
   )
