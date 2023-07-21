@@ -1,4 +1,6 @@
-.backgroundColor {
+.contentContainer {
   background-color: #f5f6f8;
-  height: 105vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
