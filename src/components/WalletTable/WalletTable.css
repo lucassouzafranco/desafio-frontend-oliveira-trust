@@ -1,0 +1,142 @@
+/* Add your custom styles for the table here */
+
+.walletTableContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.walletTableContent {
+  background-color: white;
+  width: 74%;
+  margin-top: 2em;
+  padding: 1em 2em;
+  border-radius: 6px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+}
+
+.walletHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 7vh;
+  align-items: center;
+}
+
+.walletHeader button {
+  border: 1px solid #0c9bf2;
+  width: 15%;
+  height: 86%;
+  border-radius: 4px;
+  margin-left: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.walletHeader button h4 {
+  color: #0c9bf2;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin-top: 1em;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  width: 15%;
+  position: relative;
+}
+
+tr {
+  height: 7.6vh;
+}
+
+th::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: gray; 
+  opacity: 0.4;
+}
+
+td {
+  padding: 8px;
+}
+
+/* Style the alternating rows */
+tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* Alternate row color 1 */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternate row color 2 */
+  opacity: 0.9;
+}
+
+tr p {
+  color: black;
+  font-size: small;
+}
+
+.bitcoinContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconContainer img {
+  width: 1.2vw;
+  margin-left: 0.2em;
+  margin-right: 1em; 
+}
+
+hr {
+  margin-top: 1em;
+  height: 2px;
+  color: gray;
+  opacity: 0.4;
+}
+
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+  padding-top: 0.5em;
+}
+
+.recordCount {
+  font-size: 13px;
+  color: gray;
+}
+
+.paginationNumbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vw;
+  height: 5vh;
+}
+
+.paginationNumbers button {
+  margin: 0 0.3em;
+  cursor: pointer;
+  width: 19%;
+  height: 70%;
+  background-color: white;
+  border-style: none;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 4px;
+}
+
+.paginationNumbers span {
+  color: gray;
+}
