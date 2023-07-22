@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './WalletTable.css';
 import pencil from '../../assets/pencil_icon.png';
 import trash from '../../assets/trash_icon.png';
+import UsersContext from '../../context/UsersContext';
 
 function WalletTable() {
+
+  const { usersData } = useContext(UsersContext);
+  console.log(usersData[1]);
   return (
     <div className='walletTableContainer'>
       <div className='walletTableContent'>
@@ -21,62 +25,22 @@ function WalletTable() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><p>John</p></td>
-              <td><p>Doe</p></td>
-              <td><p>john.doe@example.com</p></td>
-              <td>
-                <div className="bitcoinContainer">
-                  <p>0.0023</p>
-                  <div className="iconContainer">
-                    <img src={pencil} alt="Edit" />
-                    <img src={trash} alt="Delete" />
+            {usersData.map((user, index) => (
+              <tr key={index}>
+                <td><p>{user.nome}</p></td>
+                <td><p>{user.sobrenome}</p></td>
+                <td><p>{user.email}</p></td>
+                <td>
+                  <div className="bitcoinContainer">
+                    <p>{user.valor_carteira}</p>
+                    <div className="iconContainer">
+                      <img src={pencil} alt="Edit" />
+                      <img src={trash} alt="Delete" />
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><p>Jane</p></td>
-              <td><p>Smith</p></td>
-              <td><p>jane.smith@example.com</p></td>
-              <td>
-                <div className="bitcoinContainer">
-                  <p>0.0078</p>
-                  <div className="iconContainer">
-                    <img src={pencil} alt="Edit" />
-                    <img src={trash} alt="Delete" />
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><p>John</p></td>
-              <td><p>Doe</p></td>
-              <td><p>john.doe@example.com</p></td>
-              <td>
-                <div className="bitcoinContainer">
-                  <p>0.0023</p>
-                  <div className="iconContainer">
-                    <img src={pencil} alt="Edit" />
-                    <img src={trash} alt="Delete" />
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><p>Jane</p></td>
-              <td><p>Smith</p></td>
-              <td><p>jane.smith@example.com</p></td>
-              <td>
-                <div className="bitcoinContainer">
-                  <p>0.0078</p>
-                  <div className="iconContainer">
-                    <img src={pencil} alt="Edit" />
-                    <img src={trash} alt="Delete" />
-                  </div>
-                </div>
-              </td>
-            </tr>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <hr/>
