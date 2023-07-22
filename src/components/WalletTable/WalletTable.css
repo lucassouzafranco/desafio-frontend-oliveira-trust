@@ -119,26 +119,3 @@ hr {
   font-size: 13px;
   color: gray;
 }
-
-.paginationNumbers {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8vw;
-  height: 5vh;
-}
-
-.paginationNumbers button {
-  margin: 0 0.3em;
-  cursor: pointer;
-  width: 19%;
-  height: 70%;
-  background-color: white;
-  border-style: none;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  border-radius: 4px;
-}
-
-.paginationNumbers span {
-  color: gray;
-}
