@@ -75,11 +75,12 @@ td {
 /* Style the alternating rows */
 tbody tr:nth-child(odd) {
   background-color: #ffffff; /* Alternate row color 1 */
+  opacity: 0.8;
 }
 
 tbody tr:nth-child(even) {
   background-color: #f2f2f2; /* Alternate row color 2 */
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 tr p {
