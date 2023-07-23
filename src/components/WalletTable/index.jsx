@@ -1,13 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './WalletTable.css';
 import pencil from '../../assets/pencil_icon.png';
 import trash from '../../assets/trash_icon.png';
 import UsersContext from '../../context/UsersContext';
+import Pagination from '../Pagination';
 
 function WalletTable() {
 
-  const { usersData } = useContext(UsersContext);
-  console.log(usersData[1]);
+  const { usersData } = useContext(UsersContext);  
+  const [usersPerPage, setUsersPerPage] = useState(10);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+
+  const startIndex = (currentPageNumber - 1) * usersPerPage;
+  const endIndex = startIndex + usersPerPage;
+  const displayedUsers = usersData.slice(startIndex, endIndex);
+
   return (
     <div className='walletTableContainer'>
       <div className='walletTableContent'>
@@ -15,7 +22,7 @@ function WalletTable() {
           <h3>Carteiras</h3>
           <button><h4>Exportar CSV</h4></button>
         </div>
-        <table border="1">
+        <table>
           <thead>
             <tr>
               <th>Nome</th>
@@ -25,7 +32,7 @@ function WalletTable() {
             </tr>
           </thead>
           <tbody>
-            {usersData.map((user, index) => (
+            {displayedUsers.map((user, index) => (
               <tr key={index}>
                 <td><p>{user.nome}</p></td>
                 <td><p>{user.sobrenome}</p></td>
@@ -44,14 +51,12 @@ function WalletTable() {
           </tbody>
         </table>
         <hr/>
-        <div className="tableFooter">
-          <div className="recordCount">30 registro(s)</div>
-          <div className="paginationNumbers">
-            <button><span>1</span></button>
-            <button><span>2</span></button>
-            <button><span>3</span></button>
-          </div>
-        </div>
+        <Pagination
+          currentPageNumber={currentPageNumber}
+          setCurrentPageNumber={setCurrentPageNumber}
+          numberOfUsers={usersData.length}
+        />
+
       </div>
     </div>
   );
