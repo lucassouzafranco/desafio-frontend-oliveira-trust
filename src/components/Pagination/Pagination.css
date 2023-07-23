@@ -47,7 +47,7 @@
   opacity: 0.9;
 }
 
-.paginationNumbers.active {
+ .paginationNumbers.active {
   background-color: #0c9bf2;
   color: white;
 }

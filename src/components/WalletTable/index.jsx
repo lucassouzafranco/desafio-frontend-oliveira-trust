@@ -7,16 +7,16 @@ import Pagination from '../Pagination';
 
 function WalletTable() {
 
-  const { usersData } = useContext(UsersContext);  
+  const { usersData } = useContext(UsersContext); 
   const [usersPerPage, setUsersPerPage] = useState(10);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const startIndex = (currentPageNumber - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
   const displayedUsers = usersData.slice(startIndex, endIndex);
 
   return (
-    <div className='walletTableContainer'>
+    <div className={`walletTableContainer${isModalOpen ? ' modal-open' : ''}`}>
       <div className='walletTableContent'>
         <div className='walletHeader'>
           <h3>Carteiras</h3>
