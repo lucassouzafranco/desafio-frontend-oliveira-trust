@@ -7,13 +7,15 @@ const apiUrl = 'http://localhost:3000';
 export default function UsersProvider({ children }) {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const [usersData, setUsersData] = useState([]);
+  const [numberOfUsers, setNumberOfUsers] = useState(0);
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/users?_limit=10`);
+      const response = await axios.get(`${apiUrl}/users`);
       if (response.status === 200) {
         setIsDataFetched(true);
         setUsersData(response.data);
+        setNumberOfUsers(response.data.length);
       }
     } catch (error) {
       console.error(error);
@@ -27,6 +29,7 @@ export default function UsersProvider({ children }) {
   const UsersContextValue = {
     usersData,
     fetchUsers,
+    numberOfUsers,
   };
 
   return (

@@ -7,9 +7,14 @@ import Pagination from '../Pagination';
 
 function WalletTable() {
 
-  const { usersData } = useContext(UsersContext);
+  const { usersData } = useContext(UsersContext);  
   const [usersPerPage, setUsersPerPage] = useState(10);
-  console.log(usersData[1]);
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+
+  const startIndex = (currentPageNumber - 1) * usersPerPage;
+  const endIndex = startIndex + usersPerPage;
+  const displayedUsers = usersData.slice(startIndex, endIndex);
+
   return (
     <div className='walletTableContainer'>
       <div className='walletTableContent'>
@@ -27,7 +32,7 @@ function WalletTable() {
             </tr>
           </thead>
           <tbody>
-            {usersData.map((user, index) => (
+            {displayedUsers.map((user, index) => (
               <tr key={index}>
                 <td><p>{user.nome}</p></td>
                 <td><p>{user.sobrenome}</p></td>
@@ -46,7 +51,11 @@ function WalletTable() {
           </tbody>
         </table>
         <hr/>
-        <Pagination />
+        <Pagination
+          currentPageNumber={currentPageNumber}
+          setCurrentPageNumber={setCurrentPageNumber}
+          numberOfUsers={usersData.length}
+        />
 
       </div>
     </div>

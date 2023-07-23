@@ -1,5 +1,5 @@
 .tableFooter {
-  padding: 1em 0;
+  padding: 2% 3%;
 }
 
 .paginationTools {
@@ -45,4 +45,9 @@
 
 .arrow:hover {
   opacity: 0.9;
+}
+
+.paginationNumbers.active {
+  background-color: #0c9bf2;
+  color: white;
 }
