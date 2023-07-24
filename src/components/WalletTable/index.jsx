@@ -4,6 +4,8 @@ import pencil from '../../assets/pencil_icon.png';
 import trash from '../../assets/trash_icon.png';
 import UsersContext from '../../context/UsersContext';
 import Pagination from '../Pagination';
+import { CSVLink } from 'react-csv';
+import CSVExportButton from '../CSVExportButton';
 
 function WalletTable({ data, searchedUser }) {
   const { usersData } = useContext(UsersContext);
@@ -14,14 +16,32 @@ function WalletTable({ data, searchedUser }) {
   const endIndex = startIndex + usersPerPage;
   const displayedUsers = data ? data.slice(startIndex, endIndex) : [];
 
+  const csvHeaders = [
+    { label: 'Nome', key: 'nome' },
+    { label: 'Sobrenome', key: 'sobrenome' },
+    { label: 'Email', key: 'email' },
+    { label: 'Bitcoin', key: 'valor_carteira' },
+  ];
+
+  const csvData = data.map((user) => ({
+    nome: user.nome,
+    sobrenome: user.sobrenome,
+    email: user.email,
+    valor_carteira: user.valor_carteira,
+  }));
+
   return (
     <div className={`walletTableContainer${isModalOpen ? ' modal-open' : ''}`}>
       <div className='walletTableContent'>
         <div className='walletHeader'>
           <h3>Carteiras</h3>
-          <button>
-            <h4>Exportar CSV</h4>
-          </button>
+          <CSVExportButton
+            data={csvData}
+            headers={csvHeaders}
+            filename={'wallet_data.csv'}
+            buttonText={'Exportar CSV'}
+            className='exportButton'
+          />
         </div>
         <table>
           <thead>
@@ -70,7 +90,7 @@ function WalletTable({ data, searchedUser }) {
                     <td>
                       <div className='bitcoinContainer'>
                         <p>{user.valor_carteira}</p>
-                        <div className='iconContainer'>
+                        <div className='actionsContainer'>
                           <img src={pencil} alt='Edit' />
                           <img src={trash} alt='Delete' />
                         </div>

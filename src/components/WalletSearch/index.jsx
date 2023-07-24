@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import WalletTable from '../WalletTable';
 import BTC from '../../assets/bitcoin_icon.png'
 
-function WalletSearch() {
+function WalletSearch({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [real, setReal] = useState(null);
   const [purchaseAmount, setPurchaseAmount] = useState(0);
@@ -56,6 +56,7 @@ function WalletSearch() {
     fetchWalletData();
   }, []);
 
+  
   const bitcoinToReal = async () => {
     try {
       const response = await axios.get('http://economia.awesomeapi.com.br/json/last/BTC-BRL');
@@ -266,7 +267,10 @@ function WalletSearch() {
           </div>
         </form>
       </Modal>
-      <WalletTable data={hasSearchResults ? filteredUsers : walletData} />
+      <WalletTable
+          data={hasSearchResults ? filteredUsers : walletData}
+          real={real} 
+        />
     </div>
   );
 }
