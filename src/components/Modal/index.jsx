@@ -1,12 +1,17 @@
 import React from 'react';
 import './Modal.css';
 
-const Modal = ({ isOpen, onClose, onSubmit, children, errorMessage }) => {
+const Modal = ({ isOpen, onClose, onSubmit, children, errorMessage, updateWalletData }) => {
   if (!isOpen) return null;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onSubmit();
+    try {
+      await onSubmit();
+      updateWalletData(); // Call the updateWalletData function after a successful submission
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

@@ -5,22 +5,23 @@ import trash from '../../assets/trash_icon.png';
 import UsersContext from '../../context/UsersContext';
 import Pagination from '../Pagination';
 
-function WalletTable() {
-
-  const { usersData } = useContext(UsersContext); 
+function WalletTable({ data, searchedUser }) {
+  const { usersData } = useContext(UsersContext);
   const [usersPerPage, setUsersPerPage] = useState(10);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const startIndex = (currentPageNumber - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
-  const displayedUsers = usersData.slice(startIndex, endIndex);
+  const displayedUsers = data ? data.slice(startIndex, endIndex) : [];
 
   return (
     <div className={`walletTableContainer${isModalOpen ? ' modal-open' : ''}`}>
       <div className='walletTableContent'>
         <div className='walletHeader'>
           <h3>Carteiras</h3>
-          <button><h4>Exportar CSV</h4></button>
+          <button>
+            <h4>Exportar CSV</h4>
+          </button>
         </div>
         <table>
           <thead>
@@ -32,31 +33,66 @@ function WalletTable() {
             </tr>
           </thead>
           <tbody>
-            {displayedUsers.map((user, index) => (
-              <tr key={index}>
-                <td><p>{user.nome}</p></td>
-                <td><p>{user.sobrenome}</p></td>
-                <td><p>{user.email}</p></td>
+            {searchedUser ? ( // Check if searchedUser is not null
+              <tr>
                 <td>
-                  <div className="bitcoinContainer">
-                    <p>{user.valor_carteira}</p>
-                    <div className="iconContainer">
-                      <img src={pencil} alt="Edit" />
-                      <img src={trash} alt="Delete" />
+                  <p>{searchedUser.nome}</p>
+                </td>
+                <td>
+                  <p>{searchedUser.sobrenome}</p>
+                </td>
+                <td>
+                  <p>{searchedUser.email}</p>
+                </td>
+                <td>
+                  <div className='bitcoinContainer'>
+                    <p>{searchedUser.valor_carteira}</p>
+                    <div className='iconContainer'>
+                      <img src={pencil} alt='Edit' />
+                      <img src={trash} alt='Delete' />
                     </div>
                   </div>
                 </td>
               </tr>
-            ))}
+            ) : (
+              displayedUsers.length > 0 ? (
+                displayedUsers.map((user) => (
+                  <tr key={user.id}>
+                    <td>
+                      <p>{user.nome}</p>
+                    </td>
+                    <td>
+                      <p>{user.sobrenome}</p>
+                    </td>
+                    <td>
+                      <p>{user.email}</p>
+                    </td>
+                    <td>
+                      <div className='bitcoinContainer'>
+                        <p>{user.valor_carteira}</p>
+                        <div className='iconContainer'>
+                          <img src={pencil} alt='Edit' />
+                          <img src={trash} alt='Delete' />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                // Render an empty table row if there are no users
+                <tr>
+                  <td colSpan='4'>No rows</td>
+                </tr>
+              )
+            )}
           </tbody>
         </table>
-        <hr/>
+        <hr />
         <Pagination
           currentPageNumber={currentPageNumber}
           setCurrentPageNumber={setCurrentPageNumber}
           numberOfUsers={usersData.length}
         />
-
       </div>
     </div>
   );
