@@ -19,8 +19,16 @@ function WalletSearch() {
     setShowModal(true);
   };
 
+  const resetSearchBarFields = () => {
+    setName('');
+    setLastName('');
+    setEmail('');
+    setErrorMessage('');
+  };
+
   const closeModal = () => {
     setShowModal(false);
+    resetSearchBarFields(); 
   };
 
   const bitcoinToReal = async () => {
@@ -63,7 +71,6 @@ function WalletSearch() {
   };
 
   const handleSubmit = () => {
-    // Perform form validation here
     if (!name || !lastName || !email || !purchaseAmount) {
       toast.error('Por favor, preencha todos os campos');
       return;
@@ -72,19 +79,31 @@ function WalletSearch() {
     // Add additional email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      toast.error('Por favor, insira um endereço de email válido.');
+      toast.error('Insira um endereço de email válido.');
       return;
     }
 
     // If all validations pass, close the modal and reset the error message
     closeModal();
-    toast.success('Carteira adicionada com sucesso!');
+    const newWalletData = {
+      nome: name,
+      sobrenome: lastName,
+      email: email,
+      valor_carteira: parseFloat(purchaseAmount),
+    };
+  
+    axios.post('http://localhost:3000/users', newWalletData)
+      .then((response) => {
+        if (response.data.error === 'Email already registered') {
+          toast.error('Este email já está registrado. Por favor, use outro email.');
+        } else {
+          toast.success('Carteira adicionada com sucesso!');
+        }
+      })
+      .catch((error) => {
+        toast.error('Erro ao adicionar a carteira', error);
+      });
 
-    console.log('Form data submitted:');
-    console.log('Name:', name);
-    console.log('Last Name:', lastName);
-    console.log('Email:', email);
-    console.log('Purchase Amount:', purchaseAmount);
   };
 
   return (
@@ -140,7 +159,7 @@ function WalletSearch() {
             <input type="number" name="value" value={purchaseAmount} onChange={handlePurchaseAmountChange} />
           </label>
           <div className='bitcoinValue'>
-            <h3>{`BTC ${bitcoins}`}</h3>
+            <h4>{`BTC ${bitcoins}`}</h4>
           </div>
         </form>
       </Modal>
