@@ -53,6 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 0 1em;
 }
 
 label {
@@ -107,6 +109,7 @@ label {
   align-items: center;
   justify-content: center;
   background-color: white;
+  cursor: pointer;
 }
 
 .searchButton img {
@@ -226,4 +229,13 @@ h5 {
   border-bottom: 1px solid #d8d8d8;
   border-right: 1px solid #d8d8d8;
   padding: 0.3em 0;
+}
+
+.filterButtonContainer {
+  margin-left: 0.7em;
+}
+
+.filterButtonContainer img {
+  cursor: pointer;
+  width: 2.2vw;
 }
