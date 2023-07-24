@@ -14,7 +14,7 @@ function Menu() {
         </Link>
         <div className='profile'>
           <img className='avatar' src={avatar} alt='Avatar icon' />
-          <p className='username'>Username</p>
+          <p className='username'>Otávio Oliveira</p>
           <img className='exitIcon' src={exitIcon} alt='Exit' />
         </div>
       </div>
