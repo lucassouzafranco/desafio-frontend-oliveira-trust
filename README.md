@@ -1,112 +1,120 @@
-<p>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIAOtqQ5is5vwbcEn0ZahZfMxz1QIeAYtFfnLdkCXu1sqAGbnX" width="300">
- </p>
+# Desafio Oliveira Trust
 
-## Desafio para candidatos à vaga de Desenvolvedor Front End (Jr/Pleno/Sênior).
-Olá caro desenvolvedor, nosso principal objetivo é conseguir ver a lógica implementada independente
-da sua experiência, framework ou linguagem utilizada para resolver o desafio. Queremos avaliar a sua
-capacidade em aplicar as regras de négocios na aplicação, separar as responsabilidades e ter um código
-legível para outros desenvolvedores, as instruções nesse projeto são apenas um direcional para entregar
-o desafio mas pode ficar livre para resolver da forma que achar mais eficiente. 🚀
+## 📑 Sobre o Projeto
 
-Não deixe de enviar o seu teste mesmo que incompleto!
+Este projeto consiste em uma plataforma de gerenciamento de portfólio desenvolvida como desafio técnico da Oliveira Trust. Uma API de usuários fornecida no próprio projeto e uma API externa de conversão de moedas (https://docs.awesomeapi.com.br/api-de-moedas) foram utilizadas. Este desafio foi desenvolvido por 1 pessoa (front-end) e, posteriormente, enviado para lideranças técnicas da organização.
 
-## Tecnologias a serem utilizadas:
-* Vuejs (Fornecemos uma estrutura básica do aplicativo) 
-* CSS
-* HTML
+O objetivo principal do projeto é construir uma aplicação CRUD com as principais funcionalidades das plataformas de gerenciamento de portfolio, como categorias por conversão de câmbio, busca de carteiras e filtragem. Além disso, também há funcionalidades como a criação de novos usuários/carteiras.
 
-## Entrega:
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome completo
-e depois envie-nos o pull request. 
-Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado
-fazer o pull request.
+## 💼 Regras de Negócio
 
-Envie também seu LinkedIn ou currículo para vagas@oliveiratrust.com.br.
+1. O aplicativo deve permitir ao usuário fazer conversões entre a moeda de origem (Real Brasileiro - BRL) e a moeda de destino (Bitcoin - BTC)
+2. Ao criar ou editar uma carteira, o usuário deve poder inserir um valor de compra em sua moeda de origem (BRL), tendo como resultado o valor equivalente adquirido na criptomoeda de destino (BTC). 
 
-## O que vamos avaliar:
-- Legibilidade do código
-- Percepção da identidade do produto
-- Modularização
-- Lógica para aplicar a regra de negócio
-- Implementação das APIs
 
-## Instruções para o desafio:
-Você deve implementar um aplicativo feito com Vuejs utilizando uma API de usuários fornecida no próprio projeto e uma API externa de conversão de moedas.
 
-## Obrigatórios:
-- Acompanhar identidade visual do [protótipo fornecido](https://www.figma.com/proto/AO265OINopUSibxX8Dd4A6/Desafio-Front-End?page-id=0%3A1&node-id=2%3A362&viewport=314%2C48%2C0.15&scaling=contain&starting-point-node-id=2%3A362)
-- Listar os dados da API de usuários em uma tabela
-    - Deve conter todos os dados que achar relevante pela API (http://localhost:3004/users)
-    - Botões funcionais de editar(modal) e deletar registro p/ cada elemento
-- Possibilidade de adicionar novas carteiras através de um modal
-- Paginação da listagem (Você pode usar [esquemas](https://github.com/typicode/json-server#paginate) do json-server)
-- Adicionar um filtro para listagem (Você pode usar [esquemas](https://github.com/typicode/json-server#full-text-search) do json-server)
-- Conversão do saldo Bitcoin (BTC) de cada carteira para moeda escolhida. Ex.: BTC para BRL, USD, etc
+## ✨ Decisões Tomadas
 
-Pode utilizar qualquer API para conversão de moedas, mas recomendamos essa aqui: [https://docs.awesomeapi.com.br/api-de-moedas](https://docs.awesomeapi.com.br/api-de-moedas) pela facilidade e boa documentação.
+Durante o desenvolvimento do projeto, foram tomadas algumas decisões importantes para garantir a qualidade, organização e eficiência do código. Abaixo estão as decisões tomadas e o motivo pelo qual foram escolhidas.
 
-#### Exemplo de conversão da moeda:
-- **Parâmetros de entrada**:
-    - Moeda de origem: Bitcoin (BTC)
-    - Moeda de destino: Real (BRL)
-    - Valor para conversão ex.: BTC 0.2242509
-- **Parâmetros de saída**:
-    - Moeda de origem: Bitcoin (BTC)
-    - Moeda de destino: Real (BRL)
-    - Valor para conversão ex.: BTC 0.2242509
-    - Valor comprado em "Moeda de destino" ex.: R$ 53.054,00
-- **Critérios de aceitação**:
-    - Ao criar ou editar uma carteira, deve ser possível inserir um valor de compra tendo como resultado o valor que será adquirido na criptomoeda de destino.
-    
-#### Informações úteis da API de conversão de moedas:
-- Conversão BTC para BRL
-    - https://economia.awesomeapi.com.br/json/last/BTC-BRL
-- Moedas para conversão
-    - https://docs.awesomeapi.com.br/api-de-moedas#moedas-com-conversao-para
-- Tradução das moedas
-    - https://economia.awesomeapi.com.br/json/available/uniq
-- Combinações possíveis
-    - https://economia.awesomeapi.com.br/json/available
-- Legendas
-    - https://docs.awesomeapi.com.br/api-de-moedas#legendas
-    
-## Bônus
-- Validação dos inputs para funcionalidade de criar e editar carteira
-- Gerenciamento de estado (vuex)
-- Exportar dados da lista em CSV (Você pode utlizar alguma biblioteca npm para esta funcionalidade)
+### 1. Utilização do React.js:
+   - O React.js é uma biblioteca JavaScript para a construção de interfaces de usuário. Ele permite a criação de componentes reutilizáveis e a fácil manipulação do DOM. O React.js foi escolhido para este projeto devido à sua popularidade, grande comunidade de desenvolvedores e sua capacidade de criar interfaces interativas e responsivas.
+     
+### 2. Context API:
+   - A Context API é uma funcionalidade do React que permite o compartilhamento de estado entre componentes sem a necessidade de passar props manualmente através da árvore de componentes. Ela cria um contexto que pode ser acessado por componentes filhos que estão dentro desse contexto.
+     
+### 3. React-CSV:
+   - O React-CSV é uma biblioteca que permite exportar dados de uma lista em formato CSV. Essa biblioteca foi utilizada para exportar os dados da lista de carteiras em formato CSV. Com o React-CSV, o usuário pode baixar um arquivo CSV contendo as informações das carteiras listadas na tabela, permitindo uma fácil visualização e manipulação dos dados fora da aplicação.
+     
+### 4. React-Toastify:
+   - O React-Toastify é uma biblioteca que permite mostrar notificações (toasts) na aplicação de forma elegante e amigável. Neste projeto, ela utilizada essa biblioteca para exibir mensagens de sucesso, erro ou alerta ao usuário em diferentes situações, como ao adicionar uma nova carteira, editar um registro ou ao realizar operações de conversão de moedas. O uso do React-Toastify tornou as notificações mais agradáveis visualmente, melhorando a experiência do usuário.
+     
+### 5. Modais Feitos Manualmente:
+   - Para implementar as funcionalidades de adicionar e editar carteiras, bem como exibir informações detalhadas dos registros em um modal, os modais foram criados manualmente. O uso de modais feitos manualmente permitiu maior controle sobre o design e comportamento dos modais, adaptando-os às necessidades específicas do projeto "Desafio Oliveira Trust". A criação manual dos modais também proporcionou uma melhor integração com o restante da aplicação e facilitou a reutilização do código em diferentes partes do projeto.
 
-## Configurações do projeto
 
-É necessário possuir a biblioteca json-server instalada em sua máquina:
 
-```
+## 📚 Organização do Código
+
+A estrutura de pastas do projeto é organizada da seguinte forma:
+
+├── public
+
+│   └── ...
+
+│
+
+└── src
+
+   ├── components
+
+   │   
+
+   │   
+
+   ├── contexts
+
+   │
+
+   |
+
+   ├── pages
+
+Na pasta public, encontramos os arquivos estáticos relacionados à aplicação. Todos esses arquivos são acessíveis publicamente.
+
+Dentro da pasta src, encontramos a pasta que contém os componentes da aplicação, outra com os contextos e mais uma para comportar as páginas.
+
+
+
+## 🎯 Funcionalidades
+
+As funcionalidades principais do projeto incluem:
+
+1. Listagem de Carteiras: Os dados da API de usuários serão exibidos em uma tabela, contendo todas as informações relevantes fornecidas pela API.
+2. Botões de Editar e Deletar: Para cada elemento da tabela, haverá botões funcionais de editar (em um modal) e deletar.
+3. Adição de Novas Carteiras: É possível adicionar novas carteiras através de um modal, onde o usuário poderá inserir todas as informações necessárias.
+4. Paginação da Listagem: A listagem das tabelas é paginada para melhorar a visualização e experiência  do usuário.
+5. Filtro para Listagem: Será possível aplicar filtros para refinar a listagem. É possível filtrar carteiras através do nome, sobrenome e email do usuário. Ainda é possível visualizar apenas as carteiras que possuem 1 bitcoin ou mais.
+
+
+## 💻 Instruções de Instalação e de Uso
+
+Para começar a usar o servidor JSON localmente, você precisa ter o `json-server` instalado em seu ambiente de desenvolvimento. Caso ainda não tenha, você pode instalá-lo usando o seguinte comando no terminal:
+
+```bash
 npm install -g json-server
 ```
-Acesse a [documentação](https://github.com/typicode/json-server#getting-started) do json-server para entender melhor como manipular a API.
 
 Também será necessário instalar as dependências do projeto executando:
-
-```
+```bash
 npm install
 ```
 
-Finalmente podemos rodar o projeto e a API utilizando apenas um comando:
+Após a instalação, você pode usar o comando a seguir para iniciar o servidor JSON e observar as alterações em um arquivo de dados específico (data.json)
 
+```bash
+json-server --watch api/data.json
 ```
+
+Isso iniciará o servidor JSON e o vinculará ao arquivo data.json localizado na pasta api. O servidor estará disponível em http://localhost:3000/users por padrão.
+
+Após ter a API em execução, você pode prosseguir com a execução da aplicação que consome os dados fornecidos pela API. Opte sempre por esta ordem de execução: Api e depois projeto.   
+
+```bash
 npm start
 ```
 
-A api a ser consumida está rodando no endereço:
+A aplicação em React.js no endereço:
 
-```
-http://localhost:3004/users
-```
+http://localhost:3001
 
-e a aplicação em Vue.Js no endereço:
 
-```
-http://localhost:8080/
-```
+## 🤴🏾 Autor
 
-## Boa sorte! 🚀
+Nome: Lucas Souza
+
+E-mail: lucassouzafranco1@gmail.com
+
+Perfil no GitHub: https://github.com/lucassouzafranco
+
+Perfil no LinkedIn: https://www.linkedin.com/in/lucas-souza-franco/
