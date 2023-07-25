@@ -549,27 +549,6 @@
       "data_abertura": "2018-07-17T20:49:51Z",
       "valor_carteira": 0.2242509,
       "endereco_carteira": "1MqLZnNHywy2S21VNJyvAGJLC8TopdE9eS"
-    },
-    {
-      "nome": "teste",
-      "sobrenome": "meuteste",
-      "email": "meutest@dropbox.com",
-      "valor_carteira": 100000,
-      "id": 51
-    },
-    {
-      "nome": "nome",
-      "sobrenome": "sobre",
-      "email": "teste@meuemmail.com",
-      "valor_carteira": 100,
-      "id": 52
-    },
-    {
-      "nome": "new",
-      "sobrenome": "wallet",
-      "email": "newwallet@new.com",
-      "valor_carteira": 139,
-      "id": 53
     }
   ]
 }

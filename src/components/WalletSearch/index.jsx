@@ -36,7 +36,7 @@ function WalletSearch({ data }) {
 
   const closeModal = () => {
     setShowModal(false);
-    resetSearchBarFields(); 
+    resetSearchBarFields();
   };
 
   const updateWalletData = (newWallet) => {
@@ -56,7 +56,7 @@ function WalletSearch({ data }) {
     fetchWalletData();
   }, []);
 
-  
+
   const bitcoinToReal = async () => {
     try {
       const response = await axios.get('http://economia.awesomeapi.com.br/json/last/BTC-BRL');
@@ -101,7 +101,7 @@ function WalletSearch({ data }) {
 
   const handleFilterButtonClick = () => {
     setMoreThanOneBTC((prevStatus) => !prevStatus);
-  
+
     // Apply the filter when the button is clicked
     const filteredUsers = walletData.filter((user) => {
       if (moreThanOneBTC) {
@@ -109,7 +109,7 @@ function WalletSearch({ data }) {
       }
       return true;
     });
-    
+
     setFilteredUsers(filteredUsers);
     setHasSearchResults(true);
 
@@ -118,21 +118,21 @@ function WalletSearch({ data }) {
     } else {
       toast.success('Mostrando todas as carteiras');
     }
-  
+
     // Also, update the search results if the filter is active
     if (typedWords) {
       handleSearchButton();
     }
   };
-  
-  
+
+
   const meetsFilterCondition = (user) => {
     if (moreThanOneBTC) {
       return user.valor_carteira >= 1;
     }
     return true;
   };
-  
+
 
   const handleSearchButton = () => {
     const typedWord = typedWords.trim().toLowerCase(); // Remove leading/trailing spaces and convert to lowercase
@@ -185,7 +185,7 @@ function WalletSearch({ data }) {
       email: email,
       valor_carteira: parseFloat(purchaseAmount),
     };
-  
+
     axios.post('http://localhost:3000/users', newWalletData)
       .then((response) => {
         if (response.data.error === 'Email already registered') {
@@ -233,12 +233,12 @@ function WalletSearch({ data }) {
             </button>
             <div className='filterButtonContainer' title="Mostra carteiras acima de 1 BTC">
               <img
-              src={BTC}
-              alt="Bitcoin Filter"
-              title="Filtrar carteiras de 1 Bitcoin ou mais"
-              className={moreThanOneBTC ? 'filterIcon active' : 'filterIcon'}
-              onClick={handleFilterButtonClick}
-            />
+                src={BTC}
+                alt="Bitcoin Filter"
+                title="Filtrar carteiras de 1 Bitcoin ou mais"
+                className={moreThanOneBTC ? 'filterIcon active' : 'filterIcon'}
+                onClick={handleFilterButtonClick}
+              />
             </div>
           </form>
         </div>
@@ -268,9 +268,9 @@ function WalletSearch({ data }) {
         </form>
       </Modal>
       <WalletTable
-          data={hasSearchResults ? filteredUsers : walletData}
-          real={real} 
-        />
+        data={hasSearchResults ? filteredUsers : walletData}
+        real={real}
+      />
     </div>
   );
 }
