@@ -82,6 +82,7 @@ As funcionalidades principais do projeto incluem:
 2. Botões de Editar e Deletar: Para cada elemento da tabela, haverá botões funcionais de editar (em um modal) e deletar.
 3. Adição de Novas Carteiras: É possível adicionar novas carteiras através de um modal, onde o usuário poderá inserir todas as informações necessárias.
 4. Paginação da Listagem: A listagem das tabelas é paginada para melhorar a visualização e experiência  do usuário.
+![pagination](https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/blob/master/pagination.gif)
 5. Filtro para Listagem: Será possível aplicar filtros para refinar a listagem. É possível filtrar carteiras através do nome, sobrenome e email do usuário. Ainda é possível visualizar apenas as carteiras que possuem 1 bitcoin ou mais.
 
 
