@@ -9,7 +9,10 @@ O objetivo principal do projeto é construir uma aplicação CRUD com as princip
 ## 💼 Regras de Negócio
 
 1. O aplicativo deve permitir ao usuário fazer conversões entre a moeda de origem (Real Brasileiro - BRL) e a moeda de destino (Bitcoin - BTC)
-2. Ao criar ou editar uma carteira, o usuário deve poder inserir um valor de compra em sua moeda de origem (BRL), tendo como resultado o valor equivalente adquirido na criptomoeda de destino (BTC). 
+2. Ao criar ou editar uma carteira, o usuário deve poder inserir um valor de compra em sua moeda de origem (BRL), tendo como resultado o valor equivalente adquirido na criptomoeda de destino (BTC).
+   
+![conversao real -> btc](https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/blob/master/conversao_real_btc.gif)
+
 
 
 
@@ -26,8 +29,13 @@ Durante o desenvolvimento do projeto, foram tomadas algumas decisões importante
 ### 3. React-CSV:
    - O React-CSV é uma biblioteca que permite exportar dados de uma lista em formato CSV. Essa biblioteca foi utilizada para exportar os dados da lista de carteiras em formato CSV. Com o React-CSV, o usuário pode baixar um arquivo CSV contendo as informações das carteiras listadas na tabela, permitindo uma fácil visualização e manipulação dos dados fora da aplicação.
      
+     ![exportar para CSV ](https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/blob/master/export-csv.gif)
+
+     
 ### 4. React-Toastify:
    - O React-Toastify é uma biblioteca que permite mostrar notificações (toasts) na aplicação de forma elegante e amigável. Neste projeto, ela utilizada essa biblioteca para exibir mensagens de sucesso, erro ou alerta ao usuário em diferentes situações, como ao adicionar uma nova carteira, editar um registro ou ao realizar operações de conversão de moedas. O uso do React-Toastify tornou as notificações mais agradáveis visualmente, melhorando a experiência do usuário.
+
+     ![toast](https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/blob/master/toastfy.gif)
      
 ### 5. Modais Feitos Manualmente:
    - Para implementar as funcionalidades de adicionar e editar carteiras, bem como exibir informações detalhadas dos registros em um modal, os modais foram criados manualmente. O uso de modais feitos manualmente permitiu maior controle sobre o design e comportamento dos modais, adaptando-os às necessidades específicas do projeto "Desafio Oliveira Trust". A criação manual dos modais também proporcionou uma melhor integração com o restante da aplicação e facilitou a reutilização do código em diferentes partes do projeto.
