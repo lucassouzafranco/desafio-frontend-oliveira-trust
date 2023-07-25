@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import next from '../../assets/next_icon.png';
 import previous from '../../assets/previous_icon.png';
 import './Pagination.css';
@@ -16,7 +16,7 @@ const Pagination = ({ currentPageNumber, setCurrentPageNumber, numberOfUsers }) 
   }
 
   function handleNextButton() {
-    if (currentPageNumber + 1 <= totalPages) {  
+    if (currentPageNumber + 1 <= totalPages) {
       setCurrentPageNumber(currentPageNumber + 1);
     } else {
       return;
