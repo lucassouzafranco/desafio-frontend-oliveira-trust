@@ -1,0 +1,240 @@
+.walletSearchContainer {
+  background-color: #F5F6F8;
+  width: 100%;
+  height: 32vh;
+}
+
+.walletSearchContent {
+  padding: 3em 11em;
+}
+
+.titleAndButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 600;
+  font-size: medium;
+}
+
+.addWalletContainer {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.addWalletContainer button {
+  cursor: pointer;
+}
+
+.addWalletContainer button {
+  background-color: #0c9bf2;
+  width: 12vw;
+  height: 6vh;
+  border-radius: 5px;
+  color: white;
+  border-style: none;
+  font-weight: 700;
+}
+
+.searchBar {
+  background-color: white;
+  margin-top: 3em;
+  height: 5em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBarContent {
+  width: 99%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+}
+
+label {
+  border: 1px solid #d8d8d8;
+  width: 27%;
+  height: 71%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.nameField {
+  border: 1px solid #d8d8d8;
+  width: 27%;
+  height: 71%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.lastNameField, .emailField {
+  border: 1px solid #d8d8d8;
+  width: 27%;
+  height: 71%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.nameField input,
+.lastNameField input,
+.emailField input {
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  padding-left: 0.4em;
+  color: black;
+  font-weight: 700;
+}
+
+.searchButton {
+  border: 1px solid #0c9bf2;
+  width: 12%;
+  height: 75%;
+  border-radius: 4px;
+  margin-left: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+.searchButton img {
+  width: 1.1vw;
+  margin-right: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+h5 {
+  color: gray;
+  font-weight: 300;
+  margin-left: 0.5em;
+}
+
+.searchBarContent h4 {
+  color: #0c9bf2;
+  font-weight: 700;
+}
+
+.modalContainer {
+  background-color: white;
+  margin-top: 3em;
+  height: 2em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  width: 99%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.modalTitle {
+  margin-bottom: 1em;
+  margin-left: 0.7em;
+}
+
+.walletName {
+  border: 1px solid #d8d8d8;
+  width: 85%;
+  height: 16%;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.walletLastName, .walletEmail {
+  border: 1px solid #d8d8d8;
+  width: 85%;
+  height: 16%;
+  border-radius: 4px;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.purchasePrice {
+  border: 1px solid #d8d8d8;
+  width: 43%;
+  height: 15%;
+  border-radius: 4px;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.purchasePrice label {
+  border: 1px solid red;
+}
+.walletName input,
+.walletLastName input,
+.walletEmail input {
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  padding-left: 0.4em;
+  color: black;
+  font-weight: 700;
+}
+
+.purchasePrice input {
+  opacity: 0.5;
+  width: 30%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: 700;
+}
+
+.modalContent label {
+  font-style: italic;
+}
+
+.bitcoinValue {
+  display: inline-block;
+  width: 45.7%;
+}
+
+.bitcoinValue h4 {
+  margin-left: 1em;
+  border-left: 2px solid #0c9bf2;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  padding: 0.3em 0;
+}
+
+.filterButtonContainer {
+  margin-left: 0.7em;
+}
+
+.filterButtonContainer img {
+  cursor: pointer;
+  width: 2.2vw;
+}
