@@ -121,9 +121,5 @@ http://localhost:3001
 Nome: Lucas Souza
 
 E-mail: lucassouzafranco1@gmail.com
-
 Perfil no GitHub: https://github.com/lucassouzafranco
-
 Perfil no LinkedIn: https://www.linkedin.com/in/lucas-souza-franco/
-=======
-## Boa sorte! 🚀
