@@ -7,14 +7,12 @@ CONSIDERAÇÕES FINAIS:
 - A Aplicação deu erro genérico e não adicionou na carteira
 - Ao digitar um nome no cadastro preenche com twdb o input de pesquisa e vice-versa
 - Avisos de lint
-- Não amarrou a dependência  corretamente, então mesmo eu fazendo um npm install a aplicação deu erro (@iconify/react).
-- Tem um erro de importação que deu no  footer do projeto
+- Não amarrou a dependência  corretamente, então mesmo eu fazendo um npm install a aplicação deu erro (@iconify/react). https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/commit/f90d8f2cd9f3dc9ab6ebbb8a37964445c53e948f
 - Tem uma validação de carteira onde não posso criar uma carteira com 0 de bitcoin.
 Tem um btn de bitcoin perdido, pelo que entendi era pra mostrar as carteiras com 1 bitcoin mais não acontece esse filtro e ele ainda é meio bugado quando vc cria uma carteira.
 
 ** REFATORAÇÃO **
 - Seguir a orientação de branch sugerida no desafio. https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/tree/lucas-souza-franco
-- Feedback ao usuário em português
 - Achei uma má prática usar o mesmo estado "user" para os filtros e o modal. Você escreve em um e fica no outro.  
 tem algums fluxos que não é limpo os campos e fica uma experiência estranha
 - End-point marretado no template
@@ -22,8 +20,7 @@ tem algums fluxos que não é limpo os campos e fica uma experiência estranha
 - Fez os filtros e paginação somente pelo javascript. Podia ter mostrado domínio no consumo da API.
 - Erros consideráveis no UX, espaçamentos muito grandes e desnecessários
 - Martelou valores no código. Precisei mudar a porta do server e tive que achar no código, onde tava chamando '3000'.
-- Utilização desnecessária de mais de uma lib de ícones. Cada lib a mais adiciona complexidade e peso na aplicação.
+- Utilização desnecessária de mais de uma lib de ícones. Cada lib a mais adiciona complexidade e peso na aplicação. https://github.com/lucassouzafranco/desafio-frontend-oliveira-trust/commit/f90d8f2cd9f3dc9ab6ebbb8a37964445c53e948f
 
 ** FUNCIONALIDADES **
 - Funcionalidade de adicionar e remover inexistentes
-- Footer

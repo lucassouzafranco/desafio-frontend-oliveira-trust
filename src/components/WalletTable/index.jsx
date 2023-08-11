@@ -4,14 +4,13 @@ import pencil from '../../assets/pencil_icon.png';
 import trash from '../../assets/trash_icon.png';
 import UsersContext from '../../context/UsersContext';
 import Pagination from '../Pagination';
-import { CSVLink } from 'react-csv';
 import CSVExportButton from '../CSVExportButton';
 
 function WalletTable({ data, searchedUser }) {
   const { usersData } = useContext(UsersContext);
-  const [usersPerPage, setUsersPerPage] = useState(10);
+  const [usersPerPage] = useState(10);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen] = useState(false);
   const startIndex = (currentPageNumber - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
   const displayedUsers = data ? data.slice(startIndex, endIndex) : [];

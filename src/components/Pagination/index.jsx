@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import next from '../../assets/next_icon.png';
 import previous from '../../assets/previous_icon.png';
 import './Pagination.css';
