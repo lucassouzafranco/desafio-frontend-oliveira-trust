@@ -165,7 +165,7 @@ function WalletSearch({ data }) {
   };
 
   const handleSubmit = () => {
-    if (!name || !lastName || !email || !purchaseAmount) {
+    if (!name || !lastName || !email) {
       toast.error('Por favor, preencha todos os campos');
       return;
     }
