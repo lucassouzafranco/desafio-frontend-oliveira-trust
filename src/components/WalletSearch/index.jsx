@@ -18,7 +18,7 @@ function WalletSearch({ data }) {
   const [errorMessage, setErrorMessage] = useState('');
   const [walletData, setWalletData] = useState([]);
   const [typedWords, setTypedWords] = useState('');
-  const [searchedUser, setSearchedUser] = useState(null);
+  const [setSearchedUser] = useState(null);
   const [hasSearchResults, setHasSearchResults] = useState(false);
   const [filteredUsers, setFilteredUsers] = useState(null);
   const [moreThanOneBTC, setMoreThanOneBTC] = useState(false);
@@ -125,15 +125,6 @@ function WalletSearch({ data }) {
     }
   };
 
-
-  const meetsFilterCondition = (user) => {
-    if (moreThanOneBTC) {
-      return user.valor_carteira >= 1;
-    }
-    return true;
-  };
-
-
   const handleSearchButton = () => {
     const typedWord = typedWords.trim().toLowerCase(); // Remove leading/trailing spaces and convert to lowercase
 
@@ -203,44 +194,46 @@ function WalletSearch({ data }) {
 
   return (
     <div className='walletSearchContainer'>
-      <div className='walletSearchContent'>
-        <div className='titleAndButton'>
-          <div className='title'>
-            <h2>BTC Carteiras</h2>
-          </div>
-          <div className='addWalletContainer'>
-            <button onClick={openModal}>Adicionar Carteira</button>
-          </div>
-        </div>
-
-        <div className='searchBar'>
-          <form className='searchBarContent'>
-            <label className='nameField'>
-              <h5>Nome:</h5>
-              <input type="text" name="name" value={name} onChange={handleNameChange} />
-            </label>
-            <label className='lastNameField'>
-              <h5>Sobrenome:</h5>
-              <input type="text" name="lastname" value={lastName} onChange={handleLastNameChange} />
-            </label>
-            <label className='emailField'>
-              <h5>Email:</h5>
-              <input type="text" name="email" value={email} onChange={handleEmailChange} />
-            </label>
-            <button type="button" className='searchButton' onClick={handleSearchButton}>
-              <img src={search} alt="Search" />
-              <h4>Buscar</h4>
-            </button>
-            <div className='filterButtonContainer' title="Mostra carteiras acima de 1 BTC">
-              <img
-                src={BTC}
-                alt="Bitcoin Filter"
-                title="Filtrar carteiras de 1 Bitcoin ou mais"
-                className={moreThanOneBTC ? 'filterIcon active' : 'filterIcon'}
-                onClick={handleFilterButtonClick}
-              />
+      <div className='centeredWrapper'>
+        <div className='walletSearchContent'>
+          <div className='titleAndButton'>
+            <div className='title'>
+              <h2>BTC Carteiras</h2>
             </div>
-          </form>
+            <div className='addWalletContainer'>
+              <button onClick={openModal}>Adicionar Carteira</button>
+            </div>
+          </div>
+
+          <div className='searchBar'>
+            <form className='searchBarContent'>
+              <label className='nameField'>
+                <h5>Nome:</h5>
+                <input type="text" name="name" value={name} onChange={handleNameChange} />
+              </label>
+              <label className='lastNameField'>
+                <h5>Sobrenome:</h5>
+                <input type="text" name="lastname" value={lastName} onChange={handleLastNameChange} />
+              </label>
+              <label className='emailField'>
+                <h5>Email:</h5>
+                <input type="text" name="email" value={email} onChange={handleEmailChange} />
+              </label>
+              <button type="button" className='searchButton' onClick={handleSearchButton}>
+                <img src={search} alt="Search" />
+                <h4>Buscar</h4>
+              </button>
+              <div className='filterButtonContainer' title="Mostra carteiras acima de 1 BTC">
+                <img
+                  src={BTC}
+                  alt="Bitcoin Filter"
+                  title="Filtrar carteiras de 1 Bitcoin ou mais"
+                  className={moreThanOneBTC ? 'filterIcon active' : 'filterIcon'}
+                  onClick={handleFilterButtonClick}
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       <Modal isOpen={showModal} onClose={closeModal} onSubmit={handleSubmit} errorMessage={errorMessage}>
